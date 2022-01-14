@@ -90,7 +90,7 @@ class AbTest
             return $name;
         }
 
-        return $config[$this->version()] ?? $config[self::CONTROL] ?? $name;
+        return $config[$this->version()] ?? $config[self::CONTROL] ?? $config[self::TREATMENT] ?? $name;
     }
 
     private function is(string $version): string
