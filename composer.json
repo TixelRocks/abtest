@@ -2,7 +2,7 @@
     "name": "tixelrocks/abtest",
     "type": "library",
     "description": "A very simple A/B testing implementation for Laravel",
-    "keywords": ["a/b testing"],
+    "keywords": ["ab testing"],
     "homepage": "https://github.com/TixelRocks/abtest",
     "license": "MIT",
     "authors": [
