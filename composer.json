@@ -1,0 +1,39 @@
+{
+    "name": "tixelrocks/abtest",
+    "type": "library",
+    "description": "A very simple A/B testing implementation for Laravel",
+    "keywords": ["a/b testing"],
+    "homepage": "https://github.com/TixelRocks/abtest",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Denis Mysenko",
+            "email": "denis@tixel.com",
+            "homepage": "https://tixel.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "illuminate/support": "5.*|^6.0|^7.0|^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tixel\\AbTest\\": "src/"
+        },
+        "files": [
+            "helpers/helpers.php"
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tixel\\AbTest\\Providers\\AbTestServiceProvider"
+            ]
+        }
+    }
+}
