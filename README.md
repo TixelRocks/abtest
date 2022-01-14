@@ -85,6 +85,23 @@ Let's say we want to send an event to Google Analytics:
    </button>
 ```
 
+Of course, this can be two separate DOM elements:
+
+```php
+   <h3>
+    @abTest('Purchase Button Headline')
+   </h3>
+   
+   <button
+    data-ga="event"
+    data-event-category="{{ abTest('Purchase Button Headline')->id() }}"
+    data-event-action="Clicked"
+    data-event-label="{{ abTest('Purchase Button Headline')->description() }}"
+   >
+    Buy
+   </button>
+```
+
 We can add a global click handler that will send this to GA, from any button on any page:
 ```javascript
 document.addEventListener('click', function (event) {
