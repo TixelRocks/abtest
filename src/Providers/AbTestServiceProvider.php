@@ -2,13 +2,13 @@
 
 namespace Tixel\AbTest\Providers;
 
-use App\Http\AbTest;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Tixel\AbTest\Commands\FindActiveTests;
 use Tixel\AbTest\Components\AbTestGA;
 use Tixel\AbTest\Components\AbTestSegment;
+use Tixel\AbTest\AbTest;
 
 class AbTestServiceProvider extends ServiceProvider {
     public function boot()
