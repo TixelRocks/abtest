@@ -1,4 +1,8 @@
 ## Simple A/B testing
+[![Total Downloads](https://poser.pugx.org/tixelrocks/abtest/d/total.svg)](https://packagist.org/packages/dusterio/link-preview)
+[![Latest Stable Version](https://poser.pugx.org/tixelrocks/abtest/v/stable.svg)](https://packagist.org/packages/dusterio/link-preview)
+[![Latest Unstable Version](https://poser.pugx.org/tixelrocks/abtest/v/unstable.svg)](https://packagist.org/packages/dusterio/link-preview)
+[![License](https://poser.pugx.org/tixelrocks/abtest/license.svg)](https://packagist.org/packages/dusterio/link-preview)
 
 A very simple web A/B testing package for Laravel
 
