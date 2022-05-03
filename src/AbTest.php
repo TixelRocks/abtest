@@ -105,7 +105,7 @@ class AbTest
 
         $attempts = [
             "{$id}-{$this->version()}", // Best match
-            "{$id}-{$this::CONTROL}" // Fall back to version A (control)
+            "{$id}-{self::CONTROL}" // Fall back to version A (control)
         ];
 
         foreach ($attempts as $potentialMatch) {
