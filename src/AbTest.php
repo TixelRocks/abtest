@@ -90,7 +90,31 @@ class AbTest
             return $name;
         }
 
+        if (isset($config['view'])) {
+            return $this->tryToLocateView($config['view']);
+        }
+
         return $config[$this->version()] ?? $config[self::CONTROL] ?? $config[self::TREATMENT] ?? $name;
+    }
+
+    protected function tryToLocateView($id)
+    {
+        if (! function_exists('resource_path')) {
+            return $id  . '-' . $this->version();
+        }
+
+        $attempts = [
+            "{$id}-{$this->version()}", // Best match
+            "{$id}-{$this::CONTROL}" // Fall back to version A (control)
+        ];
+
+        foreach ($attempts as $potentialMatch) {
+            if (file_exists(resource_path("views" . DIRECTORY_SEPARATOR . str_replace(".", DIRECTORY_SEPARATOR, $potentialMatch) . ".blade.php"))) {
+                return $potentialMatch;
+            }
+        }
+
+        return $id;
     }
 
     private function is(string $version): string

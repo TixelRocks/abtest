@@ -26,8 +26,15 @@ call to action (text inside the button) - "Continue" or "Finish":
 
 return [
     [
+        // A/B testing a piece of text
         'control' => 'Continue',
         'treatment' => 'Finish',
+        'name' => 'Purchase Button Test'
+    ],
+    [
+        // A/B testing two view templates
+        // We will try to use common.welcome-control and common.welcome-treatment templates
+        'view' => 'common.welcome',
         'name' => 'Purchase Button Test'
     ]
 ];
@@ -70,6 +77,10 @@ or our Blade directive, passing the name of the A/B experiment from the config f
     <button>
         @abTest('Purchase Button Test')
     </button>
+```
+
+```php
+    @include(abTest('Purchase Confirmation Page'))
 ```
 
 Good! The text will now display as variant A and variant B depending on the user and the cookie in the browser,
