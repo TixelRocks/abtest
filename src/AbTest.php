@@ -17,7 +17,7 @@ class AbTest
 
     protected $id;
 
-    protected $descriptionCharacterLimit = 16;
+    protected $descriptionCharacterLimit = 30;
 
     /**
      * @var string
@@ -129,14 +129,13 @@ class AbTest
 
     public function description()
     {
-        $version = $this->isControl() ? 'A' : 'B';
         $shortened = mb_substr($this->display($this->id()), 0, $this->descriptionCharacterLimit);
 
         if (mb_strlen($this->display($this->id())) > $this->descriptionCharacterLimit) {
             $shortened .= "...";
         }
 
-        return "Version {$version} – {$shortened}";
+        return $shortened;
     }
 
     public function __toString(): string
