@@ -2,7 +2,7 @@
 
 namespace Tixel\AbTest;
 
-use App\User;
+use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Str;
 
 class AbTest
@@ -53,10 +53,10 @@ class AbTest
     }
 
     /**
-     * @param User $user
+     * @param Authenticatable $user
      * @return static
      */
-    public static function forUser(User $user)
+    public static function forUser(Authenticatable $user)
     {
         return new static($user->id % 2 ? static::CONTROL : static::TREATMENT);
     }
